@@ -1,18 +1,5 @@
-fun main(args: Array<String>) {
-    val bankAccount = BankAccount()
-    bankAccount.printStatement()
-}
-
-// In diesem Beispiel hat die Klasse BankAccount nicht nur bereits eine Vielzahl an Verantwortungen übernommen,
-// sondern auch die Berechnung von Kreditzinsen und das Speichern der Kundendaten.
-// Dies verletzt noch stärker das Single Responsibility Principle, da jede dieser Funktionalitäten in einer eigenen Klasse untergebracht werden sollte,
-// um den Code übersichtlicher und wartbarer zu machen.
-
-class BankAccount {
+class BankAccountSRP {
     var accountBalance = 100.0
-    var bankName = "Spasskasse"
-    var firstNameCustomer = "Bank"
-    var lastNameCustomer = "Kunde"
 
     fun deposit(amount: Double) {
         accountBalance += amount
@@ -21,40 +8,66 @@ class BankAccount {
     fun withdraw(amount: Double) {
         accountBalance -= amount
     }
+}
 
-    fun printStatement() {
-        println("Account balance: $accountBalance")
+class AccountStatement {
+    fun printStatement(balance: Double) {
+        println("Account balance: $balance")
     }
+}
+
+class Bank {
+    private var bankName = "MyBank"
 
     fun changeBankName(newName: String) {
         bankName = newName
     }
+}
 
-    fun sendEmail(email: String) {
-        println("Sending email to $email...")
+class Email {
+    fun sendEmail(email: String, emailAdress: String) {
+        println("Sending email $email... to $emailAdress")
     }
+}
 
+class PDFStatement {
     fun generatePDFStatement() {
         println("Generating PDF statement...")
     }
+}
 
+class CustomerValidation {
     fun validateCustomerInformation(firstName: String, lastName: String, address: String) {
         println("Validating customer information for $firstName $lastName, living at $address...")
     }
+}
 
+class Invoice {
     fun generateInvoice(amount: Double) {
         println("Generating invoice for $amount")
     }
+}
 
-    fun processPayment(amount: Double) {
+class Payment {
+    fun sendPayment(amount: Double) {
         println("Processing payment of $amount")
     }
+}
 
+class LoanInterest {
     fun calculateLoanInterest(principal: Double, rate: Double, time: Double) {
         println("Calculating loan interest for principal $principal, rate $rate, and time $time")
     }
+}
 
+class Customer {
+    var firstName = "Bank"
+    var lastName = "Kunde"
+    var emailAdress = "tester7p@gmail.com"
+}
+
+class CustomerData {
     fun storeCustomerData(customer: Customer) {
-        println("Storing customer data for ${customer.firstName} ${customer.lastName}")
+        println("Storing customer data for ${customer.firstName} ${customer.lastName} ${customer.emailAdress}")
     }
 }
