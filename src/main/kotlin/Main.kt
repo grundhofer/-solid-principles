@@ -1,5 +1,6 @@
 fun main(args: Array<String>) {
-
+    val bankAccount = BankAccount()
+    bankAccount.printStatement()
 }
 
 // In diesem Beispiel hat die Klasse Bank nicht nur bereits eine Vielzahl an Verantwortungen übernommen,
@@ -7,7 +8,7 @@ fun main(args: Array<String>) {
 // Dies verletzt noch stärker das Single Responsibility Principle, da jede dieser Funktionalitäten in einer eigenen Klasse untergebracht werden sollte,
 // um den Code übersichtlicher und wartbarer zu machen.
 
-class Bank {
+class BankAccount {
     var accountBalance = 100.0
     var bankName = "MyBank"
     var firstNameCustomer = "Bank"
