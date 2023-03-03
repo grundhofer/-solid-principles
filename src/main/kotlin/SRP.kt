@@ -1,3 +1,5 @@
+import java.sql.DriverManager.println
+
 fun main(args: Array<String>) {
     val bankAccount = BankAccount()
     bankAccount.printStatement()

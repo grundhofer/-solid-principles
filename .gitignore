@@ -1,23 +1,16 @@
-# Compiled class file
-*.class
-
-# Log file
-*.log
-
-# BlueJ files
-*.ctxt
-
-# Mobile Tools for Java (J2ME)
-.mtj.tmp/
-
-# Package Files #
-*.jar
-*.war
-*.nar
-*.ear
+/build/
+/target/
+.project
+.classpath
+.settings
+/test-output/
+*.png
+.idea/
+*.iml
+logident.log
+/src/main/resources/*.old
+*.pdf
 *.zip
-*.tar.gz
-*.rar
-
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
-hs_err_pid*
+!src/test/resources/sutData/emmi/photo
+/.apt_generated/
+/.apt_generated_tests/

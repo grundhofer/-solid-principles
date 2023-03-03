@@ -1,3 +1,5 @@
+import java.sql.DriverManager.println
+
 class BankAccountSRP {
     var accountBalance = 100.0
 
@@ -25,8 +27,8 @@ class Bank {
 }
 
 class Email {
-    fun sendEmail(email: String, emailAdress: String) {
-        println("Sending email $email... to $emailAdress")
+    fun sendEmail(email: String, emailAddress: String) {
+        println("Sending email $email... to $emailAddress")
     }
 }
 
@@ -63,11 +65,11 @@ class LoanInterest {
 class Customer {
     var firstName = "Bank"
     var lastName = "Kunde"
-    var emailAdress = "tester7p@gmail.com"
+    var emailAddress = "tester7p@gmail.com"
 }
 
 class CustomerData {
     fun storeCustomerData(customer: Customer) {
-        println("Storing customer data for ${customer.firstName} ${customer.lastName} ${customer.emailAdress}")
+        println("Storing customer data for ${customer.firstName} ${customer.lastName} ${customer.emailAddress}")
     }
 }
